@@ -6,7 +6,8 @@ using UnityEngine;
 public class RayTest : MonoBehaviour {
 
     public Camera fpsCam;
-
+    public GameObject aim;
+    public GameObject ball;
 	// Use this for initialization
 	void Start () {
 		
@@ -20,12 +21,7 @@ public class RayTest : MonoBehaviour {
         if (Input.GetMouseButtonDown(0))
         {
             var ray = fpsCam.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hitInfo;
-            if (Physics.Raycast(ray, out hitInfo))
-            {
-
-                Debug.Log(hitInfo.transform.name);
-            }
+            Physics.Raycast(ray);
         }
 
     }
