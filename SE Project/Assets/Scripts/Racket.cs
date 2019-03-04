@@ -27,7 +27,7 @@ public class Racket : MonoBehaviour {
         if (other.CompareTag("Ball"))
         {
             Vector3 dir = aim.transform.position - ball.transform.position;
-            other.GetComponent<Rigidbody>().velocity = dir.normalized*4f;
+            other.GetComponent<Rigidbody>().velocity = dir.normalized*3.5f+new Vector3(0,2.5f,0);
         }
         
     }
