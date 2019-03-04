@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Bot : MonoBehaviour {
-    public Transform aim, ball;
+    public Transform aim, ball, aimTarget;
 
     Vector3 targetPotiton;
     // Use this for initialization
@@ -27,8 +27,9 @@ public class Bot : MonoBehaviour {
     {
         if (other.CompareTag("Ball"))
         {
+            aimTarget.transform.position = new Vector3(Random.Range(-0.6f, 0.6f), 0.4990242f, -0.871f);
             Vector3 dir = aim.transform.position - ball.transform.position;
-            other.GetComponent<Rigidbody>().velocity = dir.normalized * 3.5f + new Vector3(0, 2.5f, 0);
+            other.GetComponent<Rigidbody>().velocity = dir.normalized * 3.5f + new Vector3(0, 2.7f, 0);
         }
 
     }
