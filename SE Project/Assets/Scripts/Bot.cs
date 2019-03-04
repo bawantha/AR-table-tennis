@@ -29,7 +29,7 @@ public class Bot : MonoBehaviour {
         if (other.CompareTag("Ball"))
         {
             raackethit.Play();
-            aimTarget.transform.position = new Vector3(Random.Range(-0.6f, 0.6f), 0.4990242f, -0.871f);
+            aimTarget.transform.position = new Vector3(-Random.Range(0.08f, 1.29f), 0, -0.24f) + transform.parent.transform.position;
             Vector3 dir = aim.transform.position - ball.transform.position;
             other.GetComponent<Rigidbody>().velocity = dir.normalized * 3.5f + new Vector3(0, 2.7f, 0);
         }

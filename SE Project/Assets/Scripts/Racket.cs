@@ -28,8 +28,8 @@ public class Racket : MonoBehaviour {
         if (other.CompareTag("Ball"))
         {
             rackethit.Play();
-            botaim.transform.position = new Vector3(Random.Range(-0.6f, 0.6f), 0.4990242f, 0.798f);
-            Vector3 dir = aim.transform.position - ball.transform.position;
+            botaim.transform.position = new Vector3(-Random.Range(0, 1.26f), 0, -1.73f) + transform.parent.transform.position;
+            Vector3 dir = (aim.transform.position - ball.transform.position);
             other.GetComponent<Rigidbody>().velocity = dir.normalized*3f+new Vector3(0,2.7f,0);
         }
         

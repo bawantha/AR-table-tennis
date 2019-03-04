@@ -6,7 +6,7 @@ public class AimTarget : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        transform.position = new Vector3(Random.Range(-0.6f, 0.6f), 0.4990242f, -0.871f);
+        transform.position = new Vector3(-Random.Range(0.08f, 1.29f), 0, -0.24f) + transform.parent.transform.position;
 
     }
 
