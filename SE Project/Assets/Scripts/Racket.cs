@@ -5,6 +5,7 @@ using UnityEngine;
 public class Racket : MonoBehaviour {
 
     public GameObject aim, ball, botaim;
+    public AudioSource rackethit;
 
 	// Use this for initialization
 	void Start () {
@@ -26,6 +27,7 @@ public class Racket : MonoBehaviour {
     {
         if (other.CompareTag("Ball"))
         {
+            rackethit.Play();
             botaim.transform.position = new Vector3(Random.Range(-0.6f, 0.6f), 0.4990242f, 0.798f);
             Vector3 dir = aim.transform.position - ball.transform.position;
             other.GetComponent<Rigidbody>().velocity = dir.normalized*3f+new Vector3(0,2.7f,0);
